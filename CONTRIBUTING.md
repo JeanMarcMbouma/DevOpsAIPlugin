@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions to the Azure DevOps plugin and private ChatGPT connector are welcome. For substantial changes, open an issue describing the problem and intended behavior before starting implementation.
+Contributions to the skills marketplace, Azure DevOps plugin, and private ChatGPT connector are welcome. For substantial changes, open an issue describing the problem and intended behavior before starting implementation.
 
 ## Get started
 
@@ -18,13 +18,13 @@ Installer changes also need testing on the affected operating systems and client
 
 ## Plugin manifests
 
-The plugin ships one skill set with two manifests: `plugins/azure-devops/plugin.json` for Codex and `plugins/azure-devops/.claude-plugin/plugin.json` for Claude Code. The Codex marketplace is `.agents/plugins/marketplace.json`; the Claude Code marketplace is `.claude-plugin/marketplace.json`. Keep the name, version, description, and keywords identical; `npm --prefix chatgpt test` checks this. Validate Claude Code changes with `claude plugin validate --strict plugins/azure-devops` and `claude plugin validate --strict .`.
+Each pack under `plugins/` ships one skill set with two manifests, `plugin.json` for Codex and `.claude-plugin/plugin.json` for Claude Code. Register each pack in both marketplaces. The Codex marketplace is `.agents/plugins/marketplace.json`; the Claude Code marketplace is `.claude-plugin/marketplace.json`. Keep the name, version, description, and keywords identical; `npm --prefix chatgpt test` checks this. Validate Claude Code changes with `claude plugin validate --strict plugins/<pack>` and `claude plugin validate --strict .`.
 
 ## Skills and workflow guidance
 
-Keep skills under `plugins/azure-devops/skills/<skill-name>/SKILL.md`. Give each skill a lowercase, hyphenated name and a description that explains the requests it handles.
+Keep skills under `plugins/<pack>/skills/<skill-name>/SKILL.md`. Give each skill a lowercase, hyphenated name and a description that explains the requests it handles.
 
-Keep skill guidance concise and reuse the shared [Boards context](plugins/azure-devops/skills/azure-devops-workflow/references/boards-context.md). Resolve relative links within the plugin directory, since Codex distributes that directory as a package. The private connector reads these same files through its guidance tool.
+Keep skill guidance concise. For Azure DevOps skills, reuse the shared [Boards context](plugins/azure-devops/skills/azure-devops-workflow/references/boards-context.md). Resolve relative links within the plugin directory, since Codex distributes that directory as a package. The private connector reads the Azure DevOps skills through its guidance tool.
 
 Exercise a changed skill against a realistic example. Include incomplete data or ambiguity where relevant and describe the observed result in the pull request. Preserve the distinction between recorded evidence, assumptions, and proposals.
 

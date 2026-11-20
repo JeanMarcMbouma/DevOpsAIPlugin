@@ -1,0 +1,17 @@
+{
+  "name": "agent-delivery",
+  "version": "1.0.0",
+  "description": "Plan and deliver engineering changes, compare viable approaches, and diagnose failures with focused checks.",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "implementation",
+    "debugging",
+    "verification"
+  ],
+  "author": {
+    "name": "Jean Marc Mbouma"
+  },
+  "homepage": "https://github.com/JeanMarcMbouma/DevOpsAIPlugin",
+  "repository": "https://github.com/JeanMarcMbouma/DevOpsAIPlugin"
+}

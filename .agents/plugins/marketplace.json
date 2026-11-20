@@ -1,7 +1,7 @@
 {
   "name": "azure-devops-local",
   "interface": {
-    "displayName": "Azure DevOps Local"
+    "displayName": "DevOps AI Skills"
   },
   "plugins": [
     {
@@ -9,6 +9,18 @@
       "source": {
         "source": "local",
         "path": "./plugins/azure-devops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "agent-delivery",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-delivery"
       },
       "policy": {
         "installation": "AVAILABLE",
