@@ -2,7 +2,37 @@
 
 Use Codex or Claude Code to triage Azure Boards work items, review Azure Repos pull requests, and diagnose Azure Pipelines failures. The installers add the plugin and configure Microsoft's local Azure DevOps MCP server in your user-level Codex or Claude Code settings.
 
-## Install
+## Skills marketplace
+
+The **DevOps AI Skills** marketplace offers two independently installable packs. **Azure DevOps** connects your agent to Boards, Repos, and Pipelines. **Agent Delivery** works in any repository and requires no Azure account or MCP server.
+
+| Agent Delivery skill | Example request |
+| --- | --- |
+| [Plan and deliver](plugins/agent-delivery/skills/plan-and-deliver/SKILL.md) | “Implement this feature in small units and verify each acceptance check.” |
+| [Compare approaches](plugins/agent-delivery/skills/compare-approaches/SKILL.md) | “Compare the two implementation options and test the assumption that could change the decision.” |
+| [Diagnose a failure](plugins/agent-delivery/skills/diagnose-failure/SKILL.md) | “Find why this build fails and verify the fix.” |
+
+Agent Delivery keeps routine work to a short plan and uses a targeted check when an unknown could change the chosen approach. Skills load as needed.
+
+**Codex**
+
+```sh
+codex plugin marketplace add JeanMarcMbouma/DevOpsAIPlugin
+codex plugin add agent-delivery@azure-devops-local
+```
+
+If the marketplace is already configured, run `codex plugin marketplace upgrade azure-devops-local` before adding the pack. In the ChatGPT desktop app, select **DevOps AI Skills** in the Plugins Directory and install **Agent Delivery**.
+
+**Claude Code**
+
+```sh
+claude plugin marketplace add JeanMarcMbouma/DevOpsAIPlugin
+claude plugin install agent-delivery@azure-devops-local
+```
+
+If the marketplace is already configured, run `claude plugin marketplace update azure-devops-local` before installing. Start a new session in the project you want to work on and try one of the example requests.
+
+## Install Azure DevOps
 
 You'll need the Codex CLI or Claude Code, Git, Node.js 20 or later, and access to an Azure DevOps Services organization. Run the installer on the same machine and under the same user account as the client. By default it sets up every client it finds on PATH; see [Choose the client](#choose-the-client).
 

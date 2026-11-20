@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agent-delivery",
+  "version": "1.0.0",
+  "description": "Plan and deliver engineering changes, compare viable approaches, and diagnose failures with focused checks.",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "implementation",
+    "debugging",
+    "verification"
+  ],
+  "author": {
+    "name": "Jean Marc Mbouma"
+  },
+  "repository": "https://github.com/JeanMarcMbouma/DevOpsAIPlugin",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Agent Delivery",
+        "shortDescription": "Plan changes, compare options, and verify delivery.",
+        "category": "Developer Tools",
+        "defaultPrompt": [
+          "Plan and implement this feature in small units, then verify each acceptance check.",
+          "Compare the viable implementation options and check the assumption that could change the choice.",
+          "Find the cause of this failing build and verify the fix."
+        ]
+      }
+    }
+  }
+}
